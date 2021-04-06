@@ -1,7 +1,13 @@
+terraform {
+    backend "s3" {
+        bucket = "blkops-eks"
+        key    = "global/redis.tfstate"
+        region = "us-east-1"
+  }
+}
+
 provider "aws" {
-  region                  = "us-east-1"
-  shared_credentials_file = "/home/rock/.aws/credentials"
-  profile                 = "default"
+  region = "us-east-1"
 }
 #####
 # VPC and subnets
